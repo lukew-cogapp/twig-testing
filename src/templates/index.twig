@@ -1,0 +1,17 @@
+{% extends '_layouts/base.twig' %}
+
+{% set home_hero = "https://craftypixels.com/placeholder-image/800x200/141414/fff&text=homepage+hero" %}
+
+{% set hero_title = "Homepage title" %}
+{% set hero_text = "Homepage hero text" %}
+
+{% block content %}
+ {% include '_components/hero-homepage.twig' with {
+            'image': home_hero,
+            'title': hero_title,
+            'text': hero_text,
+    } %}
+    <div class="container mx-auto prose">
+        <p>Homepage only extending the base layout</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+</head>
+<body class="font-sans">
+    <nav class="bg-gray-800 text-white p-4">
+        <ul class="flex space-x-4">
+            <li><a href="/" class="hover:underline">Home</a></li>
+            <li><a href="/general-content " class="hover:underline">General content</a></li>
+            <li><a href="/general-content-split-hero" class="hover:underline">General content (split hero)</a></li>
+            <li><a href="/general-content-no-hero" class="hover:underline">General content (no hero)</a></li>
+            <li><a href="/landing" class="hover:underline">Landing</a></li>
+            <li><a href="/landing-list" class="hover:underline">Landing (list)</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- Content overridden by child templates -->
+        {% endblock %}
+    </main>
+
+    <footer class="bg-gray-700 text-white text-center p-4 mt-8">
+        <p>© 2024 Your Website</p>
+    </footer>
+</body>
+</html>

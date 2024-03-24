@@ -1,0 +1,45 @@
+{% extends '_layouts/single-col.twig' %}
+
+{% set landing_hero = "https://craftypixels.com/placeholder-image/800x200/141414/fff&text=landing+hero" %}
+
+{% set hero_image = landing_hero %}
+{% set hero_title = "Landing page" %}
+{% set hero_text = "Subheading for landing page" %}
+
+{% block page_content %}
+    <div class="container mx-auto prose">
+        <p>Landing page extending the single col layout</p>
+    </div>
+    {% set cards = [
+    {
+        'title': 'Card 1 Title',
+        'text': 'This is a description for Card 1.',
+        'image': 'https://craftypixels.com/placeholder-image/400x200/141414/fff&text=Card+1',
+        'url': 'https://www.google.co.uk'
+    },
+    {
+        'title': 'Card 2 Title',
+        'text': 'This is a description for Card 2.',
+        'image': 'https://craftypixels.com/placeholder-image/400x200/141414/fff&text=Card+2',
+        'url': 'https://www.google.co.uk'
+    },
+    {
+        'title': 'Card 3 Title',
+        'text': 'This is a description for Card 3.',
+        'image': 'https://craftypixels.com/placeholder-image/400x200/141414/fff&text=Card+3',
+        'url': 'https://www.google.co.uk'
+    }
+] %}
+
+    <div class="cards {% if layout_mode == 'grid' %}grid grid-cols-1 md:grid-cols-3{% else %}flex flex-col{% endif %} gap-4">
+    {% for card in cards %}
+        {% include '_components/card.twig' with {
+            'title': card.title,
+            'body': card.text,
+            'image': card.image,
+            'url': card.url
+        } %}
+    {% endfor %}
+</div>
+
+{% endblock %}

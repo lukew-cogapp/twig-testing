@@ -1,0 +1,23 @@
+{% extends '_layouts/base.twig' %}
+
+{% block content %}
+    {% if hero_type == 'split' %}
+        {% embed '_components/hero-split.twig' with {
+            'hero_title': hero_title|default('Default Title'),
+            'hero_text': hero_text|default('Default Text'),
+            'hero_image': hero_image|default('https://craftypixels.com/placeholder-image/800x200/141414/fff&text=fallback')
+        } %}
+        {% endembed %}
+    {% else %}
+        {% embed '_components/hero-full-image.twig' with {
+            'hero_title': hero_title|default('Default Title'),
+            'hero_text': hero_text|default('Default Text'),
+            'hero_image': hero_image|default('https://craftypixels.com/placeholder-image/800x200/141414/fff&text=fallback')
+        } %}
+        {% endembed %}
+    {% endif %}
+
+<div class="container mx-auto px-4">
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}

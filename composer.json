@@ -1,0 +1,11 @@
+{
+    "name": "lukehmu/twig-test",
+    "autoload": {
+        "psr-4": {
+            "Lukehmu\\TwigTest\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

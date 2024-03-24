@@ -1,0 +1,42 @@
+{% extends '_layouts/three-col.twig' %}
+
+{% set content_hero = "https://craftypixels.com/placeholder-image/800x200/141414/fff&text=general+content+hero" %}
+
+{% set hero_image = content_hero %}
+{% set hero_title = "General content page" %}
+{% set hero_text = "Subheading for general content page" %}
+
+{% block side_column_1 %}
+<div>
+    <h3>Side Column 1 Custom Title</h3>
+    <p>Custom content for side column 1.</p>
+</div>
+{% endblock %}
+
+{% block main_column %}
+ {% set card =
+    {
+        'title': 'Card 1 Title',
+        'text': 'This is a description for Card 1.',
+        'image': 'https://craftypixels.com/placeholder-image/400x200/141414/fff&text=Card+1',
+        'url': 'https://www.google.co.uk'
+    }
+%}
+<div>
+    <h2>Main Column Custom Title</h2>
+    <p>This is the custom content for the main, central column. It's designed to hold the primary content of the page.</p>
+     {% include '_components/card.twig' with {
+            'title': card.title,
+            'body': card.text,
+            'image': card.image,
+            'url': card.url
+        } %}
+</div>
+{% endblock %}
+
+{% block side_column_2 %}
+<div>
+    <h3>Side Column 2 Custom Title</h3>
+    <p>Custom content for side column 2.</p>
+</div>
+{% endblock %}

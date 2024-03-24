@@ -1,0 +1,26 @@
+{% extends '_layouts/hero.twig' %}
+
+{% block page_content %}
+<div class="flex flex-wrap md:flex-nowrap justify-between space-x-0 md:space-x-4">
+    <div class="w-full md:w-1/4 p-4 order-1 prose">
+        {% block side_column_1 %}
+        <!-- Placeholder for side column 1 content. Child templates can override this block -->
+        <p>Side Column 1 Content</p>
+        {% endblock %}
+    </div>
+
+    <div class="w-full md:w-1/2 p-4 order-3 md:order-2 prose">
+        {% block main_column %}
+        <!-- Placeholder for main column content. Child templates can override this block -->
+        <p>Main Column Content</p>
+        {% endblock %}
+    </div>
+
+    <div class="w-full md:w-1/4 p-4 order-2 md:order-3 prose">
+        {% block side_column_2 %}
+        <!-- Placeholder for side column 2 content. Child templates can override this block -->
+        <p>Side Column 2 Content</p>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
